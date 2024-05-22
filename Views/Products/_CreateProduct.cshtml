@@ -1,0 +1,40 @@
+﻿@model TevaInventorymanagementsystem.Models.Product
+
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { @class = "form-horizontal", id = "AddNewProductForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, new { @class = "control-label col-md-2"  })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" ,  id = "txtName"  })
+          
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Description, new { @class = "form-control" , id = "txtDescription"  })
+           
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Quantity, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" ,@type = "number", @min = "0" ,  id = "txtQuantity" })
+          
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" id="btnaddnew" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+
+    
+}
+
+
+

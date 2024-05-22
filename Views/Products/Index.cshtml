@@ -1,0 +1,217 @@
+﻿@model IEnumerable<TevaInventorymanagementsystem.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="">
+    <div class="row">
+        <div align="left" class="col-md-6">
+            <button id="btnAddProduct" class="btn btn-primary">Add Product</button>
+        </div>
+        <div align="right" class="col-md-6">
+            <a asp-action="Upload" class="btn btn-primary" style="color: #ffffff;background-color: #234f78;border-color: #a1d043 4;">Upload Inventory File</a>
+        </div>
+    </div>
+
+    <br />
+    <table class="table" id="myTable" style="background-color: #a1d043;">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdateDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdateDate)
+                    </td>
+                    <td>
+
+                        <button class="btn btn-danger delete-button" data-id="@item.Id">Delete</button>
+
+                        <button class="btn btn-primary edit-button" data-id="@item.Id">Edit</button>
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="display: block;margin-top: 110px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Content will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnsaveChanges">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal Add new -->
+<div class="modal fade" id="createProductModal" tabindex="-1" role="dialog" aria-labelledby="createProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="display: block;margin-top: 110px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createProductModalLabel">Add Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- The form content will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#myTable').DataTable({
+                "bPaginate": true,
+                "sPaginationType": "full_numbers",
+                "bLengthChange": true,
+                "bInfo": true,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        text: 'Export to Excel',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4] // Export only the first 5 columns
+                        }
+                    }
+                ]
+            });
+            $(document).on('click', '.edit-button', function (e) {
+                var productId = $(this).data('id');
+                $.get('@Url.Action("EditPartial", "Products")', { id: productId }, function (data) {
+                    $('#editModal .modal-body').html(data);
+                    $('#editModal').modal('show');
+                });
+            });
+
+            $('#btnsaveChanges').click(function () {
+                var form = $('#editModal .modal-body form');
+                var employee = {
+                    Id: $('#Id').val(),
+                    Name: $('#Name').val(),
+                    Description: $('#Description').val(),
+                    Quantity: $('#Quantity').val()
+                };
+
+                if (!($('#Name').val() && $('#Description').val() && $('#Quantity').val())) {
+                    alert("Please fill all mandatory fields");
+                }
+                else {
+
+                    $.ajax({
+                        url: '@Url.Action("Edit", "Products")',
+                        type: 'POST',
+                        datatype: "json",
+                        data: employee,
+                        success: function (response) {
+                            if (response.success) {
+                                $('#editModal').modal('hide');
+                                location.reload(); 
+                            } else {
+                                var htmlContent = "<p> Model state is invalid </p>";
+                                
+                                $(".modal-body").append(htmlContent);
+                                $('#editModal .modal-body').html(htmlContent);
+                            }
+                        },
+                        error: function () {
+                            alert('An error occurred while updating the product.');
+                        }
+                    });
+                }
+            });            
+
+            $(document).on('click', '.delete-button', function (e) {               
+                e.preventDefault();
+                var button = $(this);
+                var productId = button.data('id');
+
+                if (confirm("Are you sure you want to delete this product?")) {
+                    $.ajax({
+                        url: '@Url.Action("Delete", "Products")',
+                        type: 'POST',
+                        data: { id: productId },
+                        success: function (response) {
+                            if (response.success) {
+                                $('#product-' + productId).remove();
+                                alert(response.message);
+                                location.reload();
+                            } else {
+                                alert(response.message);
+                            }
+                        },
+                        error: function () {
+                            alert('Error occurred while deleting the product.');
+                        }
+                    });
+                }
+            });
+
+            $('#btnAddProduct').click(function () {
+
+                $.get('@Url.Action("AddNew", "Products")', function (data) {
+                    $('#createProductModal .modal-body').html(data);
+                    $('#createProductModal').modal('show');
+                });
+            });
+        });
+
+    </script>
+}
+

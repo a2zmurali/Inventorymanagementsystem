@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TevaInventorymanagementsystem
+build_property.RootNamespace = TevaInventorymanagementsystem
+build_property.ProjectDir = D:\MURALI\Inventorymanagementsystem-master\Inventorymanagementsystem-master\TevaInventorymanagementsystem\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\MURALI\Inventorymanagementsystem-master\Inventorymanagementsystem-master\TevaInventorymanagementsystem
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Products/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Products/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Products/_CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcX0NyZWF0ZVByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Products/_EditPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcX0VkaXRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Shared/_Layout - login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQgLSBsb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-4vu3l2rpmk
+
+[D:/MURALI/Inventorymanagementsystem-master/Inventorymanagementsystem-master/TevaInventorymanagementsystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-q1lyxilcvj

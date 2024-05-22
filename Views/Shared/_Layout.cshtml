@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - Teva Inventory management system</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TevaInventorymanagementsystem.styles.css" asp-append-version="true" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/Assets/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/lib/Assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/Assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/lib/Assets/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/lib/Assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/lib/Assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/lib/Assets/css/aos.css">
+    <link rel="stylesheet" href="~/lib/Assets/css/style.css">
+
+    <!--Data table css-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+
+</head>
+<body>
+
+    <div class="site-wrap">
+        <div class="site-navbar py-2">
+            <div class="search-wrap">
+                <div class="container">
+                    <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+                    <form action="#" method="post">
+                        <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+                    </form>
+                </div>
+            </div>
+
+            <div class="container" style=" max-width: 80%;">
+                
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="logo">
+                        <div class="site-logo">
+
+                            <img src="~/lib/image/maxresdefault.jpg" style="height: 80px;" />
+                          
+                        </div>
+
+                    </div>
+                    <h3 class="sub-title">Inventory management system </h3>
+                    <div class="main-nav d-none d-lg-block">
+
+                        <nav class="site-navigation text-right text-md-center" role="navigation">
+                           
+                            <ul class="site-menu js-clone-nav d-none d-lg-block">
+
+                                <li>  @Html.ActionLink("Home", "Index", "Products")</li>
+                                <li class="has-children">
+                                    <a href="#">Upload File</a>
+                                    <ul class="dropdown">
+                                        <li>@Html.ActionLink("Upload Inventory File", "Upload", "Products")</li>
+                                        <li class="has-children">
+                                            <a href="#">Sub-Link</a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">TEST</a></li>
+                                                <li><a href="#">TEST</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="site-blocks-cover" style="background-image: url('/lib/assets/images/hero_1.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+                        <div class="site-block-cover-content text-center">
+                            <h2 class="sub-title">Inventory management system </h2>
+                            <h1>ASSIGNMENT</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="container" style=" max-width: 80%;">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+        <footer class="site-footer">
+            <div class="container">
+                &copy; 2024 - Murali
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="~/lib/Assets/js/jquery-3.3.1.min.js"></script>
+    <script src="~/lib/Assets/js/jquery-ui.js"></script>
+    <script src="~/lib/Assets/js/popper.min.js"></script>
+    <script src="~/lib/Assets/js/bootstrap.min.js"></script>
+    <script src="~/lib/Assets/js/owl.carousel.min.js"></script>
+    <script src="~/lib/Assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/lib/Assets/js/aos.js"></script>
+    <script src="~/lib/Assets/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    <!--Data table Js-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
+
+
+</body>
+
+</html>
